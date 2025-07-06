@@ -24,6 +24,14 @@ Windows 11 のエクスプローラーで右クリックしたときのメニュ
 
 <!-- 実行ユーザのレジストリを更新します。 -->
 
+### `win/explorer-launchto-pc.cmd`
+
+エクスプローラーを開いたときの既定の表示を「PC」（マイコンピュータ）に変更します。
+
+### `win/explorer-launchto-home.cmd`
+
+エクスプローラーの初期表示を「ホーム」に戻します（Windows のデフォルト動作）。
+
 ### `win/explorer-settings.cmd`
 
 エクスプローラーの表示設定を次の通り調整します。
