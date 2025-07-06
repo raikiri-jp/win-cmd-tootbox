@@ -16,29 +16,29 @@ Windows 環境で使えるバッチコマンド集です。主に Windows 11 向
   - restart-explorer.cmd
   - setup.cmd
 
-## 🔧 各スクリプトの説明
+## 🛠️ 各スクリプトの説明
 
-### `win/context-classic.cmd`
+### 🧰 `win/context-classic.cmd`
 
 Windows 11 のエクスプローラーで右クリックしたときのメニューを、Windows 10 スタイルのクラシック表示に変更します。
 
 <!-- 実行ユーザのレジストリを更新します。 -->
 
-### `win/context-default.cmd`
+### 🧰 `win/context-default.cmd`
 
 `win/context-classic.cmd` の変更を元に戻し、Windows 11 標準の右クリックメニューに復元します。
 
 <!-- 実行ユーザのレジストリを更新します。 -->
 
-### `win/explorer-launchto-pc.cmd`
+### 🧰 `win/explorer-launchto-pc.cmd`
 
 エクスプローラーを開いたときの既定の表示を「PC」（マイコンピュータ）に変更します。
 
-### `win/explorer-launchto-home.cmd`
+### 🧰 `win/explorer-launchto-home.cmd`
 
 エクスプローラーの初期表示を「ホーム」に戻します（Windows のデフォルト動作）。
 
-### `win/explorer-settings.cmd`
+### 🧰 `win/explorer-settings.cmd`
 
 エクスプローラーの表示設定を次の通り調整します。
 
@@ -47,7 +47,7 @@ Windows 11 のエクスプローラーで右クリックしたときのメニュ
 
 <!-- 実行ユーザのレジストリを更新します。 -->
 
-### `win/explorer-settings-reset.cmd`
+### 🧰 `win/explorer-settings-reset.cmd`
 
 エクスプローラーの表示設定を次の通り調整します。
 
@@ -56,14 +56,14 @@ Windows 11 のエクスプローラーで右クリックしたときのメニュ
 
 <!-- 実行ユーザのレジストリを更新します。 -->
 
-### `win/restart-explorer.cmd`
+### 🧰 `win/restart-explorer.cmd`
 
 Explorer を再起動します。
 設定変更を即時反映させるために使用します。
 
 他のスクリプトから `call "%~dp0restart-explorer.cmd"` のように呼び出して使用します。
 
-### `win/setup.cmd`
+### 🧰 `win/setup.cmd`
 
 以下の設定をまとめて適用します。
 
@@ -71,14 +71,14 @@ Explorer を再起動します。
 - エクスプローラーの初期表示を「PC」に変更
 - 拡張子表示・隠しファイル表示を有効化
 
-#### `win/setup.cmd` が内部的に呼び出しているスクリプト
+#### 🧰 `win/setup.cmd` が内部的に呼び出しているスクリプト
 
 - `win/context-classic.cmd`
 - `win/explorer-launchto-pc.cmd`
 - `win/explorer-settings.cmd`
 - `win/restart-explorer.cmd`
 
-### `net/check-ip.cmd`
+### 🧰 `net/check-ip.cmd`
 
 ローカルIPアドレスとグローバルIPアドレスを表示します。
 
