@@ -26,7 +26,7 @@ jobs:
           cp -r win release-content/
           cp -r net release-content/
           pandoc README.md -o release-content/README.html
-          zip -r win-cmd-toolbox.zip release-content
+          zip -r win-cmd-toolbox.zip release-content/*
           rm -r release-content
 
       - name: 🚀 Create GitHub Release
