@@ -11,5 +11,4 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v Hi
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v HideFileExt /t REG_DWORD /d 0 /f
 
 :: エクスプローラー再起動（変更を即時反映）
-taskkill /f /im explorer.exe >nul 2>&1
-start explorer.exe
+call "%~dp0restart-explorer.cmd"
