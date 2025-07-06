@@ -15,9 +15,10 @@ jobs:
       - name: ✅ Checkout repository
         uses: actions/checkout@v4
 
-      - name: 🧰 Generate README.html from README.md
-        run: |
-          pandoc README.md -o README.html
+      - name: ✅ Setup pandoc
+        uses: jfrog/setup-pandoc@v1
+        with:
+          version: '3.5'
 
       - name: 📦 Create release ZIP (win/, net/, README.html)
         run: |
@@ -35,9 +36,14 @@ jobs:
           name: Release ${{ github.ref_name }}
           tag_name: ${{ github.ref_name }}
           body: |
-            自動生成されたリリースです。
-            - README.html を含む
-            - ツールセット一式を ZIP で配布
+            This is an automated release for **win-cmd-toolbox**.
+
+            Included:
+            - `win/`: Context menu / Explorer setup scripts
+            - `net/`: Network tools (in progress)
+            - `README.html`: Documentation generated from README.md
+
+            You can run `win/setup.cmd` to apply all recommended Windows tweaks.
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
