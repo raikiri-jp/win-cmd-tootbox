@@ -1,0 +1,49 @@
+name: Build and Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: ✅ Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🧰 Generate README.html from README.md
+        run: |
+          pandoc README.md -o README.html
+
+      - name: 📦 Create release ZIP (win/, net/, README.html)
+        run: |
+          mkdir release-content
+          cp -r win release-content/
+          cp -r net release-content/
+          pandoc README.md -o release-content/README.html
+          zip -r win-cmd-toolbox.zip release-content
+          rm -r release-content
+
+      - name: 🚀 Create GitHub Release
+        id: create_release
+        uses: softprops/action-gh-release@v1
+        with:
+          name: Release ${{ github.ref_name }}
+          tag_name: ${{ github.ref_name }}
+          body: |
+            自動生成されたリリースです。
+            - README.html を含む
+            - ツールセット一式を ZIP で配布
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 📤 Upload win-cmd-toolbox.zip
+        uses: softprops/action-gh-release@v1
+        with:
+          files: win-cmd-toolbox.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
