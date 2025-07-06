@@ -15,10 +15,10 @@ jobs:
       - name: ✅ Checkout repository
         uses: actions/checkout@v4
 
-      - name: ✅ Setup pandoc
-        uses: jfrog/setup-pandoc@v1
-        with:
-          version: '3.5'
+      - name: ✅ Install required tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc zip
 
       - name: 📦 Create release ZIP (win/, net/, README.html)
         run: |
