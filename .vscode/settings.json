@@ -1,0 +1,8 @@
+{
+  "[bat]": {
+    "files.encoding": "shiftjis"
+  },
+  "[cmd]": {
+    "files.encoding": "shiftjis"
+  }
+}
