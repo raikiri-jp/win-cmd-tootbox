@@ -50,6 +50,14 @@ Windows 11 のエクスプローラーで右クリックしたときのメニュ
 
 <!-- 実行ユーザのレジストリを更新します。 -->
 
+### `win/restart-explorer.cmd`
+
+
+Explorer を再起動します。
+設定変更を即時反映させるために使用します。
+
+他のスクリプトから `call "%~dp0restart-explorer.cmd"` のように呼び出して使用します。
+
 ### `net/check-ip.cmd`
 
 ローカルIPアドレスとグローバルIPアドレスを表示します。
