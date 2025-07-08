@@ -83,3 +83,15 @@ Explorer を再起動します。
 ローカルIPアドレスとグローバルIPアドレスを表示します。
 
 - グローバルIP取得にはインターネット接続が必要です。
+
+## 🔰 SmartScreen による起動ブロックの回避方法
+
+ZIPでダウンロードしてエクスプローラーからコマンドを実行しようとすると Window Defender SmartScreen により起動がブロックされます。
+ZIPファイルのプロパティを開き、「セキュリティ」の「許可する」にチェックを入れてからZIPファイルを展開することで、コマンド起動はブロックされなくなります。
+
+![ZIPを展開する前にセキュリティを許可する](./_document/image/windows-protection-1.png)
+
+もし、コマンドを実行して下記の青い画面が表示された場合は、「詳細情報」をクリックすることでも実行できます。
+
+![Window Defender SmartScreen により起動がブロックされる](./_document/image/windows-protection-2.png)
+![詳細情報をクリックすると実行ボタンが表示される](./_document/image/windows-protection-3.png)

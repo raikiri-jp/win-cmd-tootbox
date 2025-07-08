@@ -25,6 +25,7 @@ jobs:
           mkdir release-content
           cp -r win release-content/
           cp -r net release-content/
+          cp -r _document release-content/
           pandoc README.md -o release-content/README.html
 
           cd release-content
